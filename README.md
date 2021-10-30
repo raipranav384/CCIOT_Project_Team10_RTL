@@ -48,5 +48,12 @@
    - Used to send data from Blynk App to the microcontroller
    - If the value received is an integer we can read it using `param[0].asInt()`
 
+8. `double force()`
 
+   - Used to calculate the force due to the magnetic field provided the by magnets
 
+9. `double field()`
+
+   - Used to calculate the magnetic field of the electromagnet
+
+     
