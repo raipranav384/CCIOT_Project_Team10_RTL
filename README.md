@@ -1,7 +1,6 @@
 # README
 
 1. `readUltrasonicDistance()`
-
    - Used to send and receive the Ultra sonic sound.
    - Returns the time taken for roundtrip of sound   
 
@@ -19,7 +18,7 @@
 
    - After 3 iterations of `loop()` , the average height is calculated and sent to the Blynk dashboard using ` Blynk.virtualWrite(V0,RST_HT-avg)`.
 
-     Here `RST_HT` is set to 12 cm, which is the height of the sensor from the ground level.
+   - Here `RST_HT` is set to 12 cm, which is the height of the sensor from the ground level.
 
 3. `BLYNK_WRITE(V1)`
 
@@ -27,5 +26,27 @@
 
      Here we have used it to control the current using PWM
 
-   
+4. `Blynk.begin()`
+
+   Used to configure the Blynk App
+
+   Working
+
+   - Connects to the Blynk network 
+   - Calls `Blynk.config()` to set Authentication token and Server address
+   - Connects to the server once
+
+5. `Blynk.run()`
+
+   - Called by `Blynk.begin()` during configuration
+   - Processes the incoming commands
+
+6. `virtualWrite()`
+   - Used to send data from microcontroller to the Blynk App
+7. `BLYNK_WRITE` 
+   - Function that gets updated when data sent from Blynk App is received by the microcontroller
+   - Used to send data from Blynk App to the microcontroller
+   - If the value received is an integer we can read it using `param[0].asInt()`
+
+
 
